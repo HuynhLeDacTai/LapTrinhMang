@@ -11,15 +11,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:400,700"
     />
-    <!-- https://fonts.google.com/specimen/Roboto -->
     <link rel="stylesheet" href="template/css/fontawesome.min.css" />
-    <!-- https://fontawesome.com/ -->
     <link rel="stylesheet" href="template/css/bootstrap.min.css" />
-    <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="template/css/templatemo-style.css">
-    <!--
-
-	-->
   </head>
 
   <body id="reportsPage">
@@ -64,21 +58,6 @@
                   <i class="far fa-user"></i> Accounts
                 </a>
               </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-cog"></i>
-                  <span> Settings </span>
-                </a>
-
-              </li>
             </ul>
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -91,21 +70,6 @@
         </div>
       </nav>
       <div class="container mt-5">
-        <div class="row tm-content-row">
-          <div class="col-12 tm-block-col">
-            <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
-              <h2 class="tm-block-title">List of Accounts</h2>
-              <p class="text-white">Accounts</p>
-              <select class="custom-select">
-                <option value="0">Select account</option>
-                <option value="1">Admin</option>
-                <option value="2">Editor</option>
-                <option value="3">Merchant</option>
-                <option value="4">Customer</option>
-              </select>
-            </div>
-          </div>
-        </div>
         <!-- row -->
         <div class="row tm-content-row">
           <div class="tm-block-col tm-col-avatar">
@@ -135,6 +99,15 @@
                   <input
                     id="name"
                     name="name"
+                    type="text"
+                    class="form-control validate"
+                  />
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="name">Fullname</label>
+                  <input
+                    id="fullName"
+                    name="fullName"
                     type="text"
                     class="form-control validate"
                   />
@@ -175,13 +148,12 @@
                     class="form-control validate"
                   />
                 </div>
-                <div class="form-group col-lg-6">
-                  <label class="tm-hide-sm">&nbsp;</label>
-                  <button
+                <div class="col-12" style="margin-bottom: 16px;">
+                  <button 
                     type="submit"
                     class="btn btn-primary btn-block text-uppercase"
                   >
-                    Update Your Profile
+                    Update Your Account
                   </button>
                 </div>
                 <div class="col-12">
@@ -196,21 +168,172 @@
             </div>
           </div>
         </div>
+        <div class="tm-bg-primary-dark tm-block tm-block-products">
+          <div class="tm-product-table-container">
+            <table class="table table-hover tm-table-small tm-product-table">
+              <thead>
+                <tr>
+                  <th scope="col">&nbsp;</th>
+                  <th scope="col">ACCOUNT NAME</th>
+                  <th scope="col">ACCOUNT EMAIL</th>
+                  <th scope="col">PHONE</th>
+                  <th scope="col">EXPIRE DATE</th>
+                  <th scope="col">&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 1</td>
+                  <td>1,450</td>
+                  <td>550</td>
+                  <td>28 March 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 2</td>
+                  <td>1,250</td>
+                  <td>750</td>
+                  <td>21 March 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 3</td>
+                  <td>1,100</td>
+                  <td>900</td>
+                  <td>18 Feb 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 4</td>
+                  <td>1,400</td>
+                  <td>600</td>
+                  <td>24 Feb 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 5</td>
+                  <td>1,800</td>
+                  <td>200</td>
+                  <td>22 Feb 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 6</td>
+                  <td>1,000</td>
+                  <td>1,000</td>
+                  <td>20 Feb 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 7</td>
+                  <td>500</td>
+                  <td>100</td>
+                  <td>10 Feb 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 8</td>
+                  <td>1,000</td>
+                  <td>600</td>
+                  <td>08 Feb 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 9</td>
+                  <td>1,200</td>
+                  <td>800</td>
+                  <td>24 Jan 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 10</td>
+                  <td>1,600</td>
+                  <td>400</td>
+                  <td>22 Jan 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name">Lorem Ipsum Product 11</td>
+                  <td>2,000</td>
+                  <td>400</td>
+                  <td>21 Jan 2019</td>
+                  <td>
+                    <a href="#" class="tm-product-delete-link">
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- table container -->
+          <a
+            href="add-product.jsp"
+            class="btn btn-primary btn-block text-uppercase mb-3">Add new account</a>
+          <button class="btn btn-primary btn-block text-uppercase">
+            Delete selected accounts
+          </button>
+        </div>
       </div>
       <footer class="tm-footer row tm-mt-small">
         <div class="col-12 font-weight-light">
-          <p class="text-center text-white mb-0 px-4 small">
-            Copyright &copy; <b>2018</b> All rights reserved. 
-            
-            Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
-          </p>
         </div>
       </footer>
     </div>
 
     <script src="template/js/jquery-3.3.1.min.js"></script>
-    <!-- https://jquery.com/download/ -->
     <script src="template/js/bootstrap.min.js"></script>
-    <!-- https://getbootstrap.com/ -->
   </body>
 </html>
+    

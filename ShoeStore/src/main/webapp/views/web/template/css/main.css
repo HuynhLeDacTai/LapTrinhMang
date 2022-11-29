@@ -987,8 +987,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     padding-right: 15px;
     margin: 0; }
-  .single-product .product-details .price .l-through {
-    text-decoration: line-through;
+  .single-product .product-details .price .size {
     color: #cccccc;
     margin-bottom: 0; }
   .single-product .product-details .prd-bottom {
@@ -1059,8 +1058,11 @@ h1, h2, h3, h4, h5, h6 {
 /* end product area css
 ============================================================================================ */
 .filter-bar {
-  padding: 0px 20px 10px 20px;
-  background: #828bb3; }
+    padding: 0px 20px 10px 20px;
+    width: 100%;
+    height: 60px;
+    background: #828bb3;
+}
   .filter-bar a, .filter-bar i {
     color: #000; }
 

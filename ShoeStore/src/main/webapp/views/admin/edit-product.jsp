@@ -11,18 +11,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:400,700"
     />
-    <!-- https://fonts.google.com/specimen/Roboto -->
     <link rel="stylesheet" href="template/css/fontawesome.min.css" />
-    <!-- https://fontawesome.com/ -->
     <link rel="stylesheet" href="template/jquery-ui-datepicker/jquery-ui.min.css" type="text/css" />
-    <!-- http://api.jqueryui.com/datepicker/ -->
     <link rel="stylesheet" href="template/css/bootstrap.min.css" />
-    <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="template/css/templatemo-style.css">
-    <!--
-	Product Admin CSS Template
-	https://templatemo.com/tm-524-product-admin
-	-->
+
   </head>
 
   <body>
@@ -66,20 +59,6 @@
                 <i class="far fa-user"></i> Accounts
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fas fa-cog"></i>
-                <span> Settings</span>
-              </a>
-            </li>
           </ul>
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -118,17 +97,6 @@
                   </div>
                   <div class="form-group mb-3">
                     <label
-                      for="description"
-                      >Description</label
-                    >
-                    <textarea                    
-                      class="form-control validate tm-small"
-                      rows="5"
-                      required
-                    >Lorem ipsum dolor amet gentrify glossier locavore messenger bag chillwave hashtag irony migas wolf kale chips small batch kogi direct trade shaman.</textarea>
-                  </div>
-                  <div class="form-group mb-3">
-                    <label
                       for="category"
                       >Category</label
                     >
@@ -145,12 +113,12 @@
                   <div class="row">
                       <div class="form-group mb-3 col-xs-12 col-sm-6">
                           <label
-                            for="expire_date"
-                            >Expire Date
+                            for="size"
+                            >Size
                           </label>
                           <input
-                            id="expire_date"
-                            name="expire_date"
+                            id="size"
+                            name="size"
                             type="text"
                             value="22 Oct, 2020"
                             class="form-control validate"
@@ -159,12 +127,12 @@
                         </div>
                         <div class="form-group mb-3 col-xs-12 col-sm-6">
                           <label
-                            for="stock"
-                            >Units In Stock
+                            for="prices"
+                            >Prices
                           </label>
                           <input
-                            id="stock"
-                            name="stock"
+                            id="prices"
+                            name="prices"
                             type="text"
                             value="19,765"
                             class="form-control validate"
@@ -202,11 +170,6 @@
     </div>
     <footer class="tm-footer row tm-mt-small">
         <div class="col-12 font-weight-light">
-          <p class="text-center text-white mb-0 px-4 small">
-            Copyright &copy; <b>2018</b> All rights reserved. 
-            
-            Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
-        </p>
         </div>
     </footer> 
 
