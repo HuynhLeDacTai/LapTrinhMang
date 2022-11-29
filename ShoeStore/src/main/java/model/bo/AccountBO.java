@@ -5,25 +5,25 @@ import java.util.ArrayList;
 
 import model.bean.Account;
 public class AccountBO {
-	
-	public static ArrayList<Account> getAccountList(){
-		return AccountDAO.getAccountList();
+	 AccountDAO dao = new AccountDAO();
+	public  ArrayList<Account> getAccountList(){
+		return dao.getAccountList();
 	}
 	
-	public static void Insert(String id, String name, String phone, String mail, String username, String password,
+	public  void Insert(String id, String name, String phone, String mail, String username, String password,
 			int role, String image) {
-		AccountDAO.Insert(id, name, phone, mail, username, password, role, image);
+		dao.Insert(id, name, phone, mail, username, password, role, image);
 	}
 	
-	public static void Delete(String id) {
-		AccountDAO.Delete(id);
+	public  void Delete(String id) {
+		dao.Delete(id);
 	}
-	public static void Update(String id, String name, String phone, String mail, String username, String password,
+	public  void Update(String id, String name, String phone, String mail, String username, String password,
 			int role, String image) {
-		AccountDAO.Update(id, name, phone, mail, username, password, role, image);
+		dao.Update(id, name, phone, mail, username, password, role, image);
 	}
-	public static Account getDetail(String id) {
-		return AccountDAO.getDetail(id);
+	public  Account getDetail(String id) {
+		return dao.getDetail(id);
 	}
 
 }

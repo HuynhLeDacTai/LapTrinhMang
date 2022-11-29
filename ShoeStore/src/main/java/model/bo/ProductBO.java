@@ -6,28 +6,44 @@ import model.bean.Product;
 import model.dao.ProductDAO;
 
 public class ProductBO {
-	public static ArrayList<Product> getProductList(){
-		return  ProductDAO.getProductList();
+	ProductDAO dao = new ProductDAO();
+	public  ArrayList<Product> getProductList(){
+		return  dao.getProductList();
 	}
-	public static void Insert(String id_product, String name, String id_category, int size,int price , String image) {
-		ProductDAO.Insert(id_product, name, id_category, size, price, image);
+	public  void Insert(String id_product, String name, String id_category, int size,int price , String image) {
+		dao.Insert(id_product, name, id_category, size, price, image);
 	}
-	public static void Delete(String id_product) {
-		ProductDAO.Delete(id_product);
+	public  void Delete(String id_product) {
+		dao.Delete(id_product);
 	}
-	public static void Update(String id_product, String name, String id_category, int size,int price , String image) {
-		ProductDAO.Update(id_product, name, id_category, size, price, image);
+	public  void Update(String id_product, String name, String id_category, int size,int price , String image) {
+		dao.Update(id_product, name, id_category, size, price, image);
 	}
-	public static Product getDetail(String id) {
-		return ProductDAO.getDetail(id);
+	public  Product getDetail(String id) {
+		return dao.getDetail(id);
 	}
-	public static ArrayList<Product> searchByIdCategory(String id){
-		return ProductDAO.searchByIdCategory(id);
+	public  ArrayList<Product> searchByIdCategory(String id){
+		return dao.searchByIdCategory(id);
 	}
-	public static ArrayList<Product> searchBySize(int size){
-		return ProductDAO.searchBySize(size);
+	public  ArrayList<Product> searchBySize(int size){
+		return dao.searchBySize(size);
 	}
-	public static ArrayList<Product> searchByName(String name){
-		return ProductDAO.searchByName(name);
+	public  ArrayList<Product> searchByName(String name){
+		return dao.searchByName(name);
 	}
+//	public static void main(String[] args) {
+//		ProductBO a = new ProductBO();
+//		ArrayList<Product> result = new ArrayList<Product>();
+//	result = a.getProductList();
+//	//	result=searchByName("Hunter");
+//		for (Product Product : result) {
+//			System.out.println(Product.getId_product());
+//			System.out.println(Product.getName());
+//		}
+//
+//		//Update("13","kkkk","H3",44,500400,"ttttt");
+//		//Delete("13");
+////		Product a = getDetail("2");
+////		System.out.println(a.getName());
+//	}
 }

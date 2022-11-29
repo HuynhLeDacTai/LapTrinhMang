@@ -11,7 +11,7 @@ import model.bean.Account;
 
 public class AccountDAO {
 
-	public static Connection getConnection() {
+	public  Connection getConnection() {
 
 		Connection con = null;
 		try {
@@ -23,7 +23,7 @@ public class AccountDAO {
 		return con;
 	}
 
-	public static ArrayList<Account> getAccountList() {
+	public ArrayList<Account> getAccountList() {
 		ArrayList<Account> result = new ArrayList<Account>();
 
 		// Connect to database
@@ -48,7 +48,7 @@ public class AccountDAO {
 		return result;
 	}
 
-	public static void Insert(String id, String name, String phone, String mail, String username, String password,
+	public  void Insert(String id, String name, String phone, String mail, String username, String password,
 			int role, String image) {
 		String query = "Insert into account(id,name,phone,mail,username,password,role,image) values(?,?,?,?,?,?,?,?)";
 		try {
@@ -69,7 +69,7 @@ public class AccountDAO {
 		}
 	}
 
-	public static void Delete(String id) {
+	public  void Delete(String id) {
 		String query = "Delete from account where id = '" + id + "'";
 		try {
 			Connection con = getConnection();
@@ -81,7 +81,7 @@ public class AccountDAO {
 		}
 	}
 
-	public static void Update(String id, String name, String phone, String mail, String username, String password,
+	public  void Update(String id, String name, String phone, String mail, String username, String password,
 			int role, String image) {
 		String query = "UPDATE account SET name=?,phone=?,mail=? ,username=? ,password=?,role=?,image=? WHERE id ='"
 				+ id + "'";
@@ -101,7 +101,7 @@ public class AccountDAO {
 			// TODO: handle exception
 		}
 	}
-	public static Account getDetail(String id) {
+	public  Account getDetail(String id) {
 		ArrayList<Account> list = getAccountList();
 		Account a = new Account();
 		for (Account account : list) {
@@ -112,16 +112,17 @@ public class AccountDAO {
 		return a;
 	}
 
-	//public static void main(String[] args) {
-//		ArrayList<Account> result = new ArrayList<Account>();
-//		result = getAccountList();
-//		for (Account account : result) {
-//			System.out.println(account.getName());
-//		}
+	public static void main(String[] args) {
+		AccountDAO a = new AccountDAO();
+		ArrayList<Account> result = new ArrayList<Account>();
+		result = a.getAccountList();
+		for (Account account : result) {
+			System.out.println(account.getName());
+		}
 		//Update("5","NVLLkk","123","21331","adf","123",1,"image");
 		//Delete("5");
 //		Account a =getDetail("1");
 //		System.out.println(a.getName());
-//	}
+	}
 
 }

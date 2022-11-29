@@ -11,7 +11,7 @@ import model.bean.Product;
 import model.bean.Product;
 
 public class ProductDAO {
-	public static Connection getConnection() {
+	public  Connection getConnection() {
 
 		Connection con = null;
 		try {
@@ -23,12 +23,14 @@ public class ProductDAO {
 		return con;
 	}
 
-	public static ArrayList<Product> getProductList() {
+	public  ArrayList<Product> getProductList() {
 		ArrayList<Product> result = new ArrayList<Product>();
 
 		// Connect to database
 		try {
-			Connection con = getConnection();
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ltm", "root", "");
 			Statement stmt = con.createStatement();
 			String sql = "Select * from product";
 			ResultSet rs = stmt.executeQuery(sql);
@@ -46,7 +48,7 @@ public class ProductDAO {
 		return result;
 	}
 
-	public static void Insert(String id_product, String name, String id_category, int size,int price , String image) {
+	public  void Insert(String id_product, String name, String id_category, int size,int price , String image) {
 		String query = "Insert into product(id_product,name,id_category,size,price,image) values(?,?,?,?,?,?)";
 		try {
 			Connection con = getConnection();
@@ -64,7 +66,7 @@ public class ProductDAO {
 		}
 	}
 
-	public static void Delete(String id_product) {
+	public  void Delete(String id_product) {
 		String query = "Delete from product where id_product = '" + id_product + "'";
 		try {
 			Connection con = getConnection();
@@ -76,7 +78,7 @@ public class ProductDAO {
 		}
 	}
 
-	public static void Update(String id_product, String name, String id_category, int size,int price , String image) {
+	public  void Update(String id_product, String name, String id_category, int size,int price , String image) {
 		String query = "UPDATE product SET name=?,id_category=?,size=? ,price=?,image=? WHERE id_product ='"
 				+ id_product + "'";
 		try {
@@ -93,7 +95,7 @@ public class ProductDAO {
 			// TODO: handle exception
 		}
 	}
-	public static Product getDetail(String id) {
+	public  Product getDetail(String id) {
 		ArrayList<Product> list = getProductList();
 		Product a = new Product();
 		for (Product Product : list) {
@@ -103,7 +105,7 @@ public class ProductDAO {
 		}
 		return a;
 	}
-	public static ArrayList<Product> searchByIdCategory(String id){
+	public  ArrayList<Product> searchByIdCategory(String id){
 		ArrayList<Product> p = new ArrayList<Product>();
 		ArrayList<Product> list = getProductList();
 		for (Product product : list) {
@@ -113,7 +115,7 @@ public class ProductDAO {
 		}
 		return p;
 	}
-	public static ArrayList<Product> searchBySize(int size){
+	public  ArrayList<Product> searchBySize(int size){
 		ArrayList<Product> p = new ArrayList<Product>();
 		ArrayList<Product> list = getProductList();
 		for (Product product : list) {
@@ -123,7 +125,7 @@ public class ProductDAO {
 		}
 		return p;
 	}
-	public static ArrayList<Product> searchByName(String name){
+	public  ArrayList<Product> searchByName(String name){
 		ArrayList<Product> result = new ArrayList<Product>();
           String s ='"'+"%"+name+"%"+'"';
 		// Connect to database
@@ -147,17 +149,19 @@ return result;
 	}
 
 
-	//public static void main(String[] args) {
+//	public static void main(String[] args) {
+//		ProductDAO a = new ProductDAO();
 //		ArrayList<Product> result = new ArrayList<Product>();
-////		result = getProductList();
-//		result=searchByName("Hunter");
+//	result = a.getProductList();
+//	//	result=searchByName("Hunter");
 //		for (Product Product : result) {
 //			System.out.println(Product.getId_product());
+//			System.out.println(Product.getName());
 //		}
-
-		//Update("13","kkkk","H3",44,500400,"ttttt");
-		//Delete("13");
-//		Product a = getDetail("2");
-//		System.out.println(a.getName());
-	//}
+//
+//		//Update("13","kkkk","H3",44,500400,"ttttt");
+//		//Delete("13");
+////		Product a = getDetail("2");
+////		System.out.println(a.getName());
+//	}
 }
