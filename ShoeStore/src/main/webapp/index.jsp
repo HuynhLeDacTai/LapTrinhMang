@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Init Project
+Init Project With the basic template
 </body>
 </html>
