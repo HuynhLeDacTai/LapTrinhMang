@@ -9,7 +9,7 @@ import model.bean.Category;
 
 public class CategoryDAO {
 
-	public static Connection getConnection() {
+	public  Connection getConnection() {
 
 		Connection con = null;
 		try {
@@ -21,7 +21,7 @@ public class CategoryDAO {
 		return con;
 	}
 
-	public static ArrayList<Category> getCategoryList() {
+	public  ArrayList<Category> getCategoryList() {
 		ArrayList<Category> result = new ArrayList<Category>();
 
 		// Connect to database
@@ -44,7 +44,7 @@ public class CategoryDAO {
 		return result;
 	}
 
-	public static void Insert(String id, String name) {
+	public  void Insert(String id, String name) {
 		String query = "Insert into category(id,name) values(?,?)";
 		try {
 			Connection con = getConnection();
@@ -58,7 +58,7 @@ public class CategoryDAO {
 		}
 	}
 
-	public static void Delete(String id) {
+	public  void Delete(String id) {
 		String query = "Delete from category where id = '" + id + "'";
 		try {
 			Connection con = getConnection();
@@ -70,7 +70,7 @@ public class CategoryDAO {
 		}
 	}
 
-	public static void Update(String id, String name) {
+	public  void Update(String id, String name) {
 		String query = "UPDATE category SET name=? where id = '" + id + "'";
 		try {
 			Connection con = getConnection();
@@ -82,17 +82,14 @@ public class CategoryDAO {
 			// TODO: handle exception
 		}
 	}
-	
-//	public static void main(String[] args) {
-//	ArrayList<Category> result = new ArrayList<Category>();
-//	result = getCategoryList();
-//	for (Category Category : result) {
-//		System.out.println(Category.getName());
-//	}
-		//Insert("H5","BVH");
-		//Update("H5","Cake");
-		//Delete("H5");
-//}
-	
+	public ArrayList<Integer> getID(){
+		CategoryDAO dao = new CategoryDAO();
+		ArrayList<Category> cateList =dao.getCategoryList();
+		ArrayList<Integer> cateListint = new ArrayList<Integer>();
+		for (Category category : cateList) {
+			cateListint.add(Integer.parseInt(category.getId().substring(1))); 
+		}
+		return cateListint;
+	}
 	
 }

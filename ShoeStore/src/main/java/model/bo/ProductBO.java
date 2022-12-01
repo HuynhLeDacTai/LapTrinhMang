@@ -31,19 +31,10 @@ public class ProductBO {
 	public  ArrayList<Product> searchByName(String name){
 		return dao.searchByName(name);
 	}
-//	public static void main(String[] args) {
-//		ProductBO a = new ProductBO();
-//		ArrayList<Product> result = new ArrayList<Product>();
-//	result = a.getProductList();
-//	//	result=searchByName("Hunter");
-//		for (Product Product : result) {
-//			System.out.println(Product.getId_product());
-//			System.out.println(Product.getName());
-//		}
-//
-//		//Update("13","kkkk","H3",44,500400,"ttttt");
-//		//Delete("13");
-////		Product a = getDetail("2");
-////		System.out.println(a.getName());
-//	}
+	public ArrayList<Integer> getId(){
+		return dao.getId();
+	}
+	public void Deletes(String[] id_product) {
+		dao.Deletes(id_product);
+	}
 }
