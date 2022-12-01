@@ -80,6 +80,21 @@ public class AccountDAO {
 			// TODO: handle exception
 		}
 	}
+	
+	public void deleteAccounts(String[] id) {
+		
+		try {
+			Connection con = getConnection();
+			for(int i=0 ;i<id.length;i++) {
+				String query = "Delete from account where id = '" + id[i] + "'";
+				PreparedStatement pstmt = con.prepareStatement(query);
+				pstmt.executeUpdate(query);
+			}
+			con.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 	public  void Update(String id, String name, String phone, String mail, String username, String password,
 			int role, String image) {
@@ -101,7 +116,7 @@ public class AccountDAO {
 			// TODO: handle exception
 		}
 	}
-	public  Account getDetail(String id) {
+	public  Account getAccount(String id) {
 		ArrayList<Account> list = getAccountList();
 		Account a = new Account();
 		for (Account account : list) {
@@ -111,18 +126,16 @@ public class AccountDAO {
 		}
 		return a;
 	}
-
-	public static void main(String[] args) {
-		AccountDAO a = new AccountDAO();
-		ArrayList<Account> result = new ArrayList<Account>();
-		result = a.getAccountList();
-		for (Account account : result) {
-			System.out.println(account.getName());
+	
+	public ArrayList<Integer> getIds() {
+		ArrayList<Integer> p = new ArrayList<Integer>();
+		ArrayList<Account> list = getAccountList();
+		for (Account account : list) {
+			p.add(Integer.parseInt(account.getId()));
 		}
-		//Update("5","NVLLkk","123","21331","adf","123",1,"image");
-		//Delete("5");
-//		Account a =getDetail("1");
-//		System.out.println(a.getName());
+
+		return p;
+	}
 	}
 
-}
+
