@@ -28,7 +28,6 @@ public class SearchProductServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProductBO Productbo = new ProductBO();
 		CategoryBO Categorybo = new CategoryBO();
-		
 		ArrayList<Product> listP = new ArrayList<Product>();
 		ArrayList<Category> cateList = Categorybo.getCategoryList();
 		ArrayList<Product> ProductList = Productbo.getProductList();

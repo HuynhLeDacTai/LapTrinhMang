@@ -6,17 +6,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Login Page - Product Admin Template</title>
+    <title>Login Page </title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:400,700"
     />
     <!-- https://fonts.google.com/specimen/Open+Sans -->
-    <link rel="stylesheet" href="template/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="views/admin/template/css/fontawesome.min.css" />
     <!-- https://fontawesome.com/ -->
-    <link rel="stylesheet" href="template/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="views/admin/template/css/bootstrap.min.css" />
     <!-- https://getbootstrap.com/ -->
-    <link rel="stylesheet" href="template/css/templatemo-style.css">
+    <link rel="stylesheet" href="views/admin/template/css/templatemo-style.css">
     <!--
 	Product Admin CSS Template
 	https://templatemo.com/tm-524-product-admin
@@ -24,51 +24,6 @@
   </head>
 
   <body>
-    <div>
-      <nav class="navbar navbar-expand-xl">
-        <div class="container h-100">
-          <a class="navbar-brand" href="#">
-            <h1 class="tm-site-title mb-0">Product Admin</h1>
-          </a>
-          <button
-            class="navbar-toggler ml-auto mr-0"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-bars tm-nav-icon"></i>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto h-100">
-              <li class="nav-item dropdown">
-                <a
-                class="nav-link dropdown-toggle"
-                href="../web/shop.jsp"
-                >
-                <i class="fas fa-store"></i>
-                  <span> Shop</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="products.jsp">
-                  <i class="fas fa-shopping-cart"></i> Products
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="accounts.jsp">
-                  <i class="far fa-user"></i> Accounts
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
 
     <div class="container tm-mt-big tm-mb-big">
       <div class="row">
@@ -76,7 +31,7 @@
           <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
             <div class="row">
               <div class="col-12 text-center">
-                <h2 class="tm-block-title mb-4">Welcome to Dashboard, Login</h2>
+                <h2 class="tm-block-title mb-4">Welcome</h2>
               </div>
             </div>
             <div class="row mt-2">
@@ -112,9 +67,6 @@
                       Login
                     </button>
                   </div>
-                  <button class="mt-5 btn btn-primary btn-block text-uppercase">
-                    Forgot your password?
-                  </button>
                 </form>
               </div>
             </div>
@@ -122,13 +74,10 @@
         </div>
       </div>
     </div>
-    <footer class="tm-footer row tm-mt-small">
-      <div class="col-12 font-weight-light">
-      </div>
-    </footer>
-    <script src="template/js/jquery-3.3.1.min.js"></script>
+    
+    <script src="views/admin/template/js/jquery-3.3.1.min.js"></script>
     <!-- https://jquery.com/download/ -->
-    <script src="template/js/bootstrap.min.js"></script>
+    <script src="views/admin/template/js/bootstrap.min.js"></script>
     <!-- https://getbootstrap.com/ -->
   </body>
 </html>
