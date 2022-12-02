@@ -5,25 +5,35 @@ import java.util.ArrayList;
 
 import model.bean.Account;
 public class AccountBO {
-	 AccountDAO dao = new AccountDAO();
+	 AccountDAO accountDAO = new AccountDAO();
 	public  ArrayList<Account> getAccountList(){
-		return dao.getAccountList();
+		return accountDAO.getAccountList();
 	}
 	
-	public  void Insert(String id, String name, String phone, String mail, String username, String password,
-			int role, String image) {
-		dao.Insert(id, name, phone, mail, username, password, role, image);
+	public void Insert(Account account) {
+		accountDAO.Insert(account.getId(), account.getName(), account.getPhone()
+				, account.getMail(), account.getUsername(), account.getPassword(),
+				account.getRole(), account.getImage());
 	}
 	
-	public  void Delete(String id) {
-		dao.Delete(id);
+	public void Delete(String id) {
+		accountDAO.Delete(id);
 	}
-	public  void Update(String id, String name, String phone, String mail, String username, String password,
-			int role, String image) {
-		dao.Update(id, name, phone, mail, username, password, role, image);
+	public void Update(Account account) {
+		accountDAO.Update(account.getId(), account.getName(), account.getPhone()
+				, account.getMail(), account.getUsername(), account.getPassword(),
+				account.getRole(), account.getImage());
 	}
-	public  Account getDetail(String id) {
-		return dao.getDetail(id);
+	public Account getAccount(String id) {
+		return accountDAO.getAccount(id);
+	}
+	
+	public void deleteAccounts(String[] id) {
+		accountDAO.deleteAccounts(id);
+	}
+	
+	public ArrayList<Integer> getIds() {
+		return accountDAO.getIds();
 	}
 
 }

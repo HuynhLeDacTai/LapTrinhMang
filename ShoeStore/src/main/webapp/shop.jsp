@@ -181,8 +181,8 @@
 								<div class="product-details">
 									<h6><%=ProductList.get(i).getName()%></h6>
 									<div class="price">
-										<h6><%=ProductList.get(i).getPrice()%></h6>
-										<h6 class="size"><%=ProductList.get(i).getSize()%></h6>
+										<h6><%= ProductList.get(i).getPrice() %> VNĐ</h6>
+										<h6 class="size">Size: <%= ProductList.get(i).getSize() %></h6>
 									</div>
 									<div class="prd-bottom">
 
