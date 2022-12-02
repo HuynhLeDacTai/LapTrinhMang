@@ -25,5 +25,9 @@ public class AccountBO {
 	public  Account getDetail(String id) {
 		return dao.getDetail(id);
 	}
+	
+	public  Account login(String user, String pass) {
+		return dao.login(user, pass);
+	}
 
 }
