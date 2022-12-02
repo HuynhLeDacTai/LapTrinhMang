@@ -144,13 +144,7 @@ public class AccountDAO {
 		return null;
 	}
 
-	public static void main(String[] args) {
-		AccountDAO a = new AccountDAO();
-		ArrayList<Account> result = new ArrayList<Account>();
-		result = a.getAccountList();
-		for (Account account : result) {
-			System.out.println(account.getName());
-	
+
 	public ArrayList<Integer> getIds() {
 		ArrayList<Integer> p = new ArrayList<Integer>();
 		ArrayList<Account> list = getAccountList();

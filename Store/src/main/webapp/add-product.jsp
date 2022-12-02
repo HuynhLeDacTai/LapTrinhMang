@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 	<%@page language="java" import="java.util.ArrayList"%>
 	<%@page language="java" import="model.bean.Category"%>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@
 							Products
 					</a></li>
 
-					<li class="nav-item"><a class="nav-link" href="accounts.jsp">
+					<li class="nav-item"><a class="nav-link" href="LoadDataAccountServlet">
 							<i class="far fa-user"></i> Accounts
 					</a></li>>
 				</ul>
@@ -78,29 +78,62 @@
 			<div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
 				<div class="tm-bg-primary-dark tm-block tm-block-h-auto">
 					<div class="row">
-						<div class="col-12" style="text-align: center">
-							<h2 class="tm-block-title d-inline-block">ADD CATEGORY</h2>
+						<div class="col-12">
+							<h2 class="tm-block-title d-inline-block">Add Product</h2>
 						</div>
 					</div>
-					<div style="width: 100%">
-						
-							<form action="AddCategoryServlet" class="tm-edit-product-form" method="post">
+					<div class="row tm-edit-product-row">
+						<div class="col-xl-6 col-lg-6 col-md-12">
+							<form action="AddProductServlet" class="tm-edit-product-form" method="post">
 								<div class="form-group mb-3">
-								<% String id = (String)request.getAttribute("id"); %>
-									<label for="id">ID Category</label> 
-									<input style="color: #000" id="id" name="id" type="text" value="<%= id %>" readonly
+									<label for="name">Product Name
+									</label> <input id="name" name="nameProduct" type="text"
 										class="form-control validate" required />
 								</div>
 								<div class="form-group mb-3">
-									<label for="name">Name Category </label> <input
-										id="name" name="name" type="text"
+									<label for="category">Category</label>
+									<select class="custom-select tm-select-accounts" id="category" name="category">
+									<option selected>Select category</option>
+									<%
+						ArrayList<Category> categoryList=(ArrayList<Category>)request.getAttribute("listCategory");
+						for(int i=0 ;i< categoryList.size();i++){				
+			                         %>
+										<option value="<%= categoryList.get(i).getId() %>"><%= categoryList.get(i).getName() %></option>
+									<%} %>
+									</select>
+								</div>
+								<div class="row">
+									<div class="form-group mb-3 col-xs-12 col-sm-6">
+										<label for="size">Size </label>
+										<input id="size" name="size" type="text"
+											class="form-control validate" data-large-mode="true" />
+									</div>
+									<div class="form-group mb-3 col-xs-12 col-sm-6">
+										<label for="prices">Prices
+										</label> <input id="prices" name="prices" type="text"
+											class="form-control validate" required />
+									</div>
+								</div>
+								<div class="form-group mb-3">
+									<label for="image">Image </label> <input
+										id="image" name="image" type="text"
 										class="form-control validate" required />
 								</div>
-						
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+							<img class="tm-product-img-dummy mx-auto " id="linkimg" alt="" src="https://th.bing.com/th/id/R.e77cc490dab8f27130db34b3969d95df?rik=q6uLCjc3NPGDbQ&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2f7%2fL%2fY%2fh%2fC%2fi%2fimage-not-available-hi.png&ehk=gknG%2bl2FEyNdCYMVFpKHzJW2Hwmacb47VzpKAsSJFJo%3d&risl=&pid=ImgRaw&r=0">
+							<div class="custom-file mt-3 mb-3">
+							        <input
+									type="button" class="btn btn-primary btn-block mx-auto"
+									value="UPLOAD PRODUCT IMAGE"
+									name ="addbtn"
+									onclick="Mylink()" />
+							</div>
+						</div>
 						<div class="col-12">
 							<button type="submit"
 								class="btn btn-primary btn-block text-uppercase">Add
-								Category Now</button>
+								Product Now</button>
 						</div>
 						</form>
 					</div>
@@ -108,7 +141,9 @@
 			</div>
 		</div>
 	</div>
-
+	<footer class="tm-footer row tm-mt-small">
+		<div class="col-12 font-weight-light"></div>
+	</footer>
 
 	<script src="views/admin/template/js/jquery-3.3.1.min.js"></script>
 	<!-- https://jquery.com/download/ -->
@@ -117,5 +152,11 @@
 	<!-- https://jqueryui.com/download/ -->
 	<script src="views/admin/template/js/bootstrap.min.js"></script>
 	<!-- https://getbootstrap.com/ -->
+	<script>
+    function Mylink() {
+    	var img=document.getElementById('image').value;
+    	document.getElementById('linkimg').src=img;
+	}
+    </script>
 </body>
 </html>

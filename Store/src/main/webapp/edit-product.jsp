@@ -58,7 +58,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="accounts.jsp">
+              <a class="nav-link" href="LoadDataAccountServlet">
                 <i class="far fa-user"></i> Accounts
               </a>
             </li>

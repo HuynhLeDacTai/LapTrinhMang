@@ -1,14 +1,13 @@
+<%@page import="model.bean.Account"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@page language="java" import="java.util.ArrayList"%>
-	<%@page language="java" import="model.bean.Category"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<title>Add Product</title>
+<title>Edit Product - Dashboard HTML Template</title>
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
 <!-- https://fonts.google.com/specimen/Roboto -->
@@ -23,10 +22,6 @@
 <!-- https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="views/admin/template/css/templatemo-style.css">
-<!--
-	Product Admin CSS Template
-	https://templatemo.com/tm-524-product-admin
-	-->
 </head>
 
 <body>
@@ -46,28 +41,20 @@
 				<ul class="navbar-nav mx-auto h-100">
 
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="LoadDataWedShopServlet">
-							<i class="fas fa-store"></i> <span> Shop</span>
+						class="nav-link dropdown-toggle" href="LoadDataWedShopServlet"> <i
+							class="fas fa-store"></i> <span> Shop</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link "
-						href="LoadDataManagerServlet"> <i class="fas fa-shopping-cart"></i>
-							Products
+					<li class="nav-item"><a class="nav-link" href="LoadDataManagerServlet">
+							<i class="fas fa-shopping-cart"></i> Products
 					</a></li>
 
-					<li class="nav-item"><a class="nav-link" href="accounts.jsp">
-							<i class="far fa-user"></i> Accounts
-					</a></li>>
+					<li class="nav-item"><a class="nav-link active"
+						href="LoadDataAccountServlet"> <i class="far fa-user"></i> Accounts
+					</a></li>
 				</ul>
 				<ul class="navbar-nav">
-					<li class="nav-item">						
-						<% if(session.getAttribute("username") != null){%>
-							<p class="nav-link d-block">Account : <strong><%=session.getAttribute("username") %></strong></p>
-						<%  } %>
-					</li>
-
 					<li class="nav-item"><a class="nav-link d-block"
-						href="LoginServlet?action=logout"> 
-						<b>Logout</b>
+						href="login.jsp"> Admin, <b>Logout</b>
 					</a></li>
 				</ul>
 			</div>
@@ -79,61 +66,59 @@
 				<div class="tm-bg-primary-dark tm-block tm-block-h-auto">
 					<div class="row">
 						<div class="col-12">
-							<h2 class="tm-block-title d-inline-block">Add Product</h2>
+							<h2 class="tm-block-title d-inline-block">Edit Account</h2>
 						</div>
 					</div>
 					<div class="row tm-edit-product-row">
 						<div class="col-xl-6 col-lg-6 col-md-12">
-							<form action="AddProductServlet" class="tm-edit-product-form" method="post">
+							<% Account account = (Account)request.getAttribute("account"); %>
+							<form action="UpdateAccountServlet?cid=<%=account.getId()%>&update=1" class="tm-edit-product-form" method="post">
 								<div class="form-group mb-3">
-									<label for="name">Product Name
-									</label> <input id="name" name="nameProduct" type="text"
-										class="form-control validate" required />
+									<label for="name">Account Name </label> <input id="name"
+										name="name" type="text" class="form-control validate" required  value="<%=account.getName() %>"/>
 								</div>
 								<div class="form-group mb-3">
-									<label for="category">Category</label>
-									<select class="custom-select tm-select-accounts" id="category" name="category">
-									<option selected>Select category</option>
-									<%
-						ArrayList<Category> categoryList=(ArrayList<Category>)request.getAttribute("listCategory");
-						for(int i=0 ;i< categoryList.size();i++){				
-			                         %>
-										<option value="<%= categoryList.get(i).getId() %>"><%= categoryList.get(i).getName() %></option>
-									<%} %>
-									</select>
+									<label for="phone">Phone </label> <input id="phone"
+										name="phone" type="text" class="form-control validate"
+										required value="<%=account.getPhone() %>"/>
+								</div>
+								<div class="form-group mb-3">
+									<label for="email">Email </label> <input id="email"
+										name="email" type="text"
+										class="form-control validate" required value="<%=account.getMail() %>"/>
+								</div>
+								<div class="form-group mb-3">
+									<label for="userName">Username </label> <input id="userName"
+										name="userName" type="text"
+										class="form-control validate" required value="<%=account.getUsername() %>"/>
 								</div>
 								<div class="row">
 									<div class="form-group mb-3 col-xs-12 col-sm-6">
-										<label for="size">Size </label>
-										<input id="size" name="size" type="text"
-											class="form-control validate" data-large-mode="true" />
+										<label for="password">Password </label> <input id="password" name="password"
+											type="text" class="form-control validate"
+											data-large-mode="true" value="<%=account.getPassword() %>"/>
 									</div>
 									<div class="form-group mb-3 col-xs-12 col-sm-6">
-										<label for="prices">Prices
-										</label> <input id="prices" name="prices" type="text"
-											class="form-control validate" required />
+										<label for="roles">Roles </label> <input id="roles"
+											name="roles" type="text" class="form-control validate"
+											required value="<%=account.getRole()%>"/>
 									</div>
-								</div>
-								<div class="form-group mb-3">
-									<label for="image">Image </label> <input
-										id="image" name="image" type="text"
-										class="form-control validate" required />
 								</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-							<img class="tm-product-img-dummy mx-auto " id="linkimg" alt="" src="https://th.bing.com/th/id/R.e77cc490dab8f27130db34b3969d95df?rik=q6uLCjc3NPGDbQ&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2f7%2fL%2fY%2fh%2fC%2fi%2fimage-not-available-hi.png&ehk=gknG%2bl2FEyNdCYMVFpKHzJW2Hwmacb47VzpKAsSJFJo%3d&risl=&pid=ImgRaw&r=0">
+							<img class="tm-product-img-dummy mx-auto" src="<%=account.getImage()%>">
+								
+							</img>
 							<div class="custom-file mt-3 mb-3">
-							        <input
+								<input id="fileInput" type="file" style="display: none;" /> <input
 									type="button" class="btn btn-primary btn-block mx-auto"
-									value="UPLOAD PRODUCT IMAGE"
-									name ="addbtn"
-									onclick="Mylink()" />
+									value="UPLOAD ACCOUNT IMAGE"
+									onclick="" />
 							</div>
 						</div>
 						<div class="col-12">
 							<button type="submit"
-								class="btn btn-primary btn-block text-uppercase">Add
-								Product Now</button>
+								class="btn btn-primary btn-block text-uppercase">Edit Account Now</button>
 						</div>
 						</form>
 					</div>
@@ -153,10 +138,9 @@
 	<script src="views/admin/template/js/bootstrap.min.js"></script>
 	<!-- https://getbootstrap.com/ -->
 	<script>
-    function Mylink() {
-    	var img=document.getElementById('image').value;
-    	document.getElementById('linkimg').src=img;
-	}
-    </script>
+		$(function() {
+			$("#expire_date").datepicker();
+		});
+	</script>
 </body>
 </html>
