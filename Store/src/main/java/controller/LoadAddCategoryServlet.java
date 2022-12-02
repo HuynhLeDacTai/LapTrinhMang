@@ -39,7 +39,7 @@ public class LoadAddCategoryServlet extends HttpServlet {
               				 .sorted()
               				 .collect(Collectors.toList());
                        request.setAttribute("id", "H"+(listId.get(listId.size()-1)+1));
-                       String destination = "/Add-category.jsp";
+                       String destination = "/add-category.jsp";
                		RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
                		rd.forward(request, response);
 			}

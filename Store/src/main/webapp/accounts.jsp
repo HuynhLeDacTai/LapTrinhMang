@@ -8,7 +8,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<title>Accounts - Product Admin Template</title>
+<title>Accounts </title>
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
 <link rel="stylesheet"
@@ -35,7 +35,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mx-auto h-100">
 						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="LoadDataWedShopServlet"> <i
+							class="nav-link dropdown-toggle" href="LoadDataWebShopServlet"> <i
 								class="fas fa-store"></i> <span> Shop</span>
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="LoadDataManagerServlet">

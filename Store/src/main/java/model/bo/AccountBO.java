@@ -13,7 +13,7 @@ public class AccountBO {
 	public void Insert(Account account) {
 		accountDAO.Insert(account.getId(), account.getName(), account.getPhone()
 				, account.getMail(), account.getUsername(), account.getPassword(),
-				account.getRole(), account.getImage());
+				account.getRole());
 	}
 	
 	public void Delete(String id) {
@@ -22,7 +22,7 @@ public class AccountBO {
 	public void Update(Account account) {
 		accountDAO.Update(account.getId(), account.getName(), account.getPhone()
 				, account.getMail(), account.getUsername(), account.getPassword(),
-				account.getRole(), account.getImage());
+				account.getRole());
 	}
 	public Account getAccount(String id) {
 		return accountDAO.getAccount(id);

@@ -20,11 +20,11 @@ import model.bean.Account;
 import model.bean.Product;
 import model.bean.Category;
 
-@WebServlet("/LoadDataWedShopServlet")
-public class LoadDataWedShopServlet extends HttpServlet {
+@WebServlet("/LoadDataWebShopServlet")
+public class LoadDataWebShopServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public LoadDataWedShopServlet() {
+	public LoadDataWebShopServlet() {
 		super();
 
 	}

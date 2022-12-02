@@ -46,7 +46,7 @@
 				<ul class="navbar-nav mx-auto h-100">
 
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="LoadDataWedShopServlet">
+						class="nav-link dropdown-toggle" href="LoadDataWebShopServlet">
 							<i class="fas fa-store"></i> <span> Shop</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link "
@@ -56,7 +56,7 @@
 
 					<li class="nav-item"><a class="nav-link" href="LoadDataAccountServlet">
 							<i class="far fa-user"></i> Accounts
-					</a></li>>
+					</a></li>
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item">						

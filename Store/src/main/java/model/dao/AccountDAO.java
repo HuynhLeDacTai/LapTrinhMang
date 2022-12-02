@@ -34,8 +34,7 @@ public class AccountDAO {
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				Account Account = new Account(rs.getString("id"), rs.getString("name"), rs.getString("phone"),
-						rs.getString("mail"), rs.getString("username"), rs.getString("password"), rs.getInt("role"),
-						rs.getString("image"));
+						rs.getString("mail"), rs.getString("username"), rs.getString("password"), rs.getInt("role"));
 				result.add(Account);
 			}
 
@@ -49,8 +48,8 @@ public class AccountDAO {
 	}
 
 	public  void Insert(String id, String name, String phone, String mail, String username, String password,
-			int role, String image) {
-		String query = "Insert into account(id,name,phone,mail,username,password,role,image) values(?,?,?,?,?,?,?,?)";
+			int role) {
+		String query = "Insert into account(id,name,phone,mail,username,password,role,image) values(?,?,?,?,?,?,?)";
 		try {
 			Connection con = getConnection();
 			PreparedStatement p = con.prepareStatement(query);
@@ -61,7 +60,6 @@ public class AccountDAO {
 			p.setString(5, username);
 			p.setString(6, password);
 			p.setInt(7, role);
-			p.setString(8, image);
 			p.execute();
 			p.close();
 		} catch (Exception e) {
@@ -97,8 +95,8 @@ public class AccountDAO {
 	}
 
 	public  void Update(String id, String name, String phone, String mail, String username, String password,
-			int role, String image) {
-		String query = "UPDATE account SET name=?,phone=?,mail=? ,username=? ,password=?,role=?,image=? WHERE id ='"
+			int role) {
+		String query = "UPDATE account SET name=?,phone=?,mail=? ,username=? ,password=?,role=? WHERE id ='"
 				+ id + "'";
 		try {
 			Connection con = getConnection();
@@ -109,7 +107,6 @@ public class AccountDAO {
 			p.setString(4, username);
 			p.setString(5, password);
 			p.setInt(6, role);
-			p.setString(7, image);
 			p.executeUpdate();
 			p.close();
 		} catch (Exception e) {
@@ -135,8 +132,7 @@ public class AccountDAO {
 			ResultSet rs = stmt.executeQuery(query);
 			while (rs.next()) {
 				return new Account(rs.getString("id"), rs.getString("name"), rs.getString("phone"),
-						rs.getString("mail"), rs.getString("username"), rs.getString("password"), rs.getInt("role"),
-						rs.getString("image"));
+						rs.getString("mail"), rs.getString("username"), rs.getString("password"), rs.getInt("role"));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

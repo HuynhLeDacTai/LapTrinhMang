@@ -34,8 +34,7 @@ public class UpdateAccountServlet extends HttpServlet{
 				request.getParameter("email"),
 				request.getParameter("userName"),
 				request.getParameter("password"),
-				Integer.parseInt(request.getParameter("roles")),
-				"ta"
+				Integer.parseInt(request.getParameter("roles"))
 				);
 		System.out.println(newAccount.getId());
 		accountBO.Update(newAccount); 

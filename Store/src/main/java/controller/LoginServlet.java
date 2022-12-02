@@ -72,7 +72,7 @@ public class LoginServlet extends HttpServlet {
 				//user
 //				destination = "/LoadDataWedShopServlet";
 //				request.getRequestDispatcher(destination).forward(request, response);
-				response.sendRedirect("LoadDataWedShopServlet");
+				response.sendRedirect("LoadDataWebShopServlet");
 			}
 			else
 			{

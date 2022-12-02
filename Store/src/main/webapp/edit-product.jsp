@@ -45,7 +45,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="LoadDataWedShopServlet"
+                href="LoadDataWebShopServlet"
               >
               <i class="fas fa-store"></i>
               <span> Shop</span>

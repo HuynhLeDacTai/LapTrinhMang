@@ -59,7 +59,7 @@ public class LoadDataAccountServlet extends HttpServlet {
 		System.out.println(id);
 		Account newAccount = new Account(id, request.getParameter("name"), request.getParameter("phone"),
 				request.getParameter("email"), request.getParameter("userName"), request.getParameter("password"),
-				Integer.parseInt(request.getParameter("roles")), "ta");
+				Integer.parseInt(request.getParameter("roles")));
 		accountBO.Insert(newAccount);
 		doGet(request, response);
 

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Authentication Errpr</title>
+<title>Authentication Error</title>
 </head>
 <body>
 <h1>Authentication error</h1>

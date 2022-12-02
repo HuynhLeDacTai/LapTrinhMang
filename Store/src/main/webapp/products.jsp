@@ -44,7 +44,7 @@
 				<ul class="navbar-nav mx-auto h-100">
 
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="LoadDataWedShopServlet">
+						class="nav-link dropdown-toggle" href="LoadDataWebShopServlet">
 							<i class="fas fa-store"></i> <span> Shop</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link"
