@@ -45,14 +45,14 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="../web/shop.jsp"
+                href="LoadDataWedShopServlet"
               >
               <i class="fas fa-store"></i>
               <span> Shop</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="LoadDataManagerServlet">
+              <a class="nav-link " href="LoadDataManagerServlet">
                 <i class="fas fa-shopping-cart"></i> Products
               </a>
             </li>

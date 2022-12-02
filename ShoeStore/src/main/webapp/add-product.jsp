@@ -46,10 +46,10 @@
 				<ul class="navbar-nav mx-auto h-100">
 
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="../web/shop.jsp">
+						class="nav-link dropdown-toggle" href="LoadDataWedShopServlet">
 							<i class="fas fa-store"></i> <span> Shop</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link active"
+					<li class="nav-item"><a class="nav-link "
 						href="LoadDataManagerServlet"> <i class="fas fa-shopping-cart"></i>
 							Products
 					</a></li>

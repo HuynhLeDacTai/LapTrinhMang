@@ -34,7 +34,6 @@ public class DeleteProductServlet extends HttpServlet {
 			String[] listIdProduct = request.getParameterValues("checkRows");
 
 			bo.Deletes(listIdProduct);
-//			System.out.println(listIdProduct);
 		}
 		
 		response.sendRedirect("LoadDataManagerServlet");   

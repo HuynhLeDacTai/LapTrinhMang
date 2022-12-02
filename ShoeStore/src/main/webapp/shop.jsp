@@ -119,7 +119,7 @@
 					<h1>Spring Collection is comming!</h1>
 				</div>
 			</div>
-		</div>m
+		</div>
 	</section>
 	<!-- End Banner Area -->
 	<div class="container">
@@ -178,7 +178,14 @@
 						<!-- single product -->
 						<%
 						ArrayList<Product> ProductList = (ArrayList<Product>) request.getAttribute("ProductList");
-						for (int i = 0; i < ProductList.size(); i++) {
+		                if(ProductList.isEmpty()){   %>
+		                      <div style="margin-left:25% ">
+		                      <img class="img-fluid"
+									src="https://cdn.dribbble.com/users/760295/screenshots/4433975/media/03494b209a1511a61868ced337b97931.png?compress=1&resize=400x300" alt="">
+		                      </div>
+		                	
+		                <% } else { %>
+						<% for (int i = 0; i < ProductList.size(); i++) {
 						%>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
@@ -209,7 +216,7 @@
 							</div>
 						</div>
 						<%
-						}
+						}}
 						%>
 					</div>
 				</section>
@@ -257,10 +264,6 @@
 										<input name="b_36c4fd991d266f23781ded980_aefe40901a"
 											tabindex="-1" value="" type="text">
 									</div>
-
-									<!-- <div class="col-lg-4 col-md-4">
-													<button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
-												</div>  -->
 								</div>
 								<div class="info"></div>
 							</form>
