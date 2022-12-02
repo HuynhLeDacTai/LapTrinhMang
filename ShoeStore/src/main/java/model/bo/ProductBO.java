@@ -6,35 +6,35 @@ import model.bean.Product;
 import model.dao.ProductDAO;
 
 public class ProductBO {
-	ProductDAO dao = new ProductDAO();
+	ProductDAO productDAO = new ProductDAO();
 	public  ArrayList<Product> getProductList(){
-		return  dao.getProductList();
+		return  productDAO.getProductList();
 	}
 	public  void Insert(String id_product, String name, String id_category, int size,int price , String image) {
-		dao.Insert(id_product, name, id_category, size, price, image);
+		productDAO.Insert(id_product, name, id_category, size, price, image);
 	}
 	public  void Delete(String id_product) {
-		dao.Delete(id_product);
+		productDAO.Delete(id_product);
 	}
 	public  void Update(String id_product, String name, String id_category, int size,int price , String image) {
-		dao.Update(id_product, name, id_category, size, price, image);
+		productDAO.Update(id_product, name, id_category, size, price, image);
 	}
 	public  Product getDetail(String id) {
-		return dao.getDetail(id);
+		return productDAO.getDetail(id);
 	}
 	public  ArrayList<Product> searchByIdCategory(String id){
-		return dao.searchByIdCategory(id);
+		return productDAO.searchByIdCategory(id);
 	}
 	public  ArrayList<Product> searchBySize(int size){
-		return dao.searchBySize(size);
+		return productDAO.searchBySize(size);
 	}
 	public  ArrayList<Product> searchByName(String name){
-		return dao.searchByName(name);
+		return productDAO.searchByName(name);
 	}
 	public ArrayList<Integer> getId(){
-		return dao.getId();
+		return productDAO.getId();
 	}
 	public void Deletes(String[] id_product) {
-		dao.Deletes(id_product);
+		productDAO.Deletes(id_product);
 	}
 }
