@@ -36,7 +36,13 @@
             </div>
             <div class="row mt-2">
               <div class="col-12">
-                <form action="index.html" method="post" class="tm-login-form">
+              	<%
+              		if(request.getParameter("error") != null)
+              		{
+              			out.print("<p style='color:red'>Invalid Username or Password, please try again</p>");
+              		}
+              	%>
+                <form action="LoginServlet" method="post" class="tm-login-form">
                   <div class="form-group">
                     <label for="username">Username</label>
                     <input

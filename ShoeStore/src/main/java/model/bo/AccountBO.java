@@ -35,5 +35,9 @@ public class AccountBO {
 	public ArrayList<Integer> getIds() {
 		return accountDAO.getIds();
 	}
+	
+	public  Account login(String user, String pass) {
+		return accountDAO.login(user, pass);
+	}
 
 }

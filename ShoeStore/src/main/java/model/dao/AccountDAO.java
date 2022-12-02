@@ -126,12 +126,37 @@ public class AccountDAO {
 		}
 		return a;
 	}
+	public Account login(String user, String pass)
+	{
+		String query = "select * from account where username = '" + user + "' and password = '" + pass + "'";
+		try {
+			Connection con = getConnection();
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				return new Account(rs.getString("id"), rs.getString("name"), rs.getString("phone"),
+						rs.getString("mail"), rs.getString("username"), rs.getString("password"), rs.getInt("role"),
+						rs.getString("image"));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+
+	public static void main(String[] args) {
+		AccountDAO a = new AccountDAO();
+		ArrayList<Account> result = new ArrayList<Account>();
+		result = a.getAccountList();
+		for (Account account : result) {
+			System.out.println(account.getName());
 	
 	public ArrayList<Integer> getIds() {
 		ArrayList<Integer> p = new ArrayList<Integer>();
 		ArrayList<Account> list = getAccountList();
 		for (Account account : list) {
 			p.add(Integer.parseInt(account.getId()));
+
 		}
 
 		return p;
