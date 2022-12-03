@@ -11,14 +11,14 @@ import model.bean.Account;
 
 public class AccountDAO {
 
-	public  Connection getConnection() {
+	public Connection getConnection() {
 
 		Connection con = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ltm", "root", "");
 		} catch (Exception e) {
-			System.err.print("Khong ket noi dc");
+			System.err.print("Can't connect to MySQL");
 		}
 		return con;
 	}
@@ -30,7 +30,7 @@ public class AccountDAO {
 		try {
 			Connection con = getConnection();
 			Statement stmt = con.createStatement();
-			String sql = "Select * from account";
+			String sql = "select * from account";
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				Account Account = new Account(rs.getString("id"), rs.getString("name"), rs.getString("phone"),
@@ -47,9 +47,8 @@ public class AccountDAO {
 		return result;
 	}
 
-	public  void Insert(String id, String name, String phone, String mail, String username, String password,
-			int role) {
-		String query = "Insert into account(id,name,phone,mail,username,password,role) values(?,?,?,?,?,?,?)";
+	public void insert(String id, String name, String phone, String mail, String username, String password, int role) {
+		String query = "insert into account(id,name,phone,mail,username,password,role) values(?,?,?,?,?,?,?)";
 		try {
 			Connection con = getConnection();
 			PreparedStatement p = con.prepareStatement(query);
@@ -67,7 +66,7 @@ public class AccountDAO {
 		}
 	}
 
-	public  void Delete(String id) {
+	public void deleteAccount(String id) {
 		String query = "Delete from account where id = '" + id + "'";
 		try {
 			Connection con = getConnection();
@@ -78,12 +77,12 @@ public class AccountDAO {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void deleteAccounts(String[] id) {
-		
+
 		try {
 			Connection con = getConnection();
-			for(int i=0 ;i<id.length;i++) {
+			for (int i = 0; i < id.length; i++) {
 				String query = "Delete from account where id = '" + id[i] + "'";
 				PreparedStatement pstmt = con.prepareStatement(query);
 				pstmt.executeUpdate(query);
@@ -94,10 +93,8 @@ public class AccountDAO {
 		}
 	}
 
-	public  void Update(String id, String name, String phone, String mail, String username, String password,
-			int role) {
-		String query = "UPDATE account SET name=?,phone=?,mail=? ,username=? ,password=?,role=? WHERE id ='"
-				+ id + "'";
+	public void update(String id, String name, String phone, String mail, String username, String password, int role) {
+		String query = "UPDATE account SET name=?,phone=?,mail=? ,username=? ,password=?,role=? WHERE id ='" + id + "'";
 		try {
 			Connection con = getConnection();
 			PreparedStatement p = con.prepareStatement(query);
@@ -113,18 +110,19 @@ public class AccountDAO {
 			// TODO: handle exception
 		}
 	}
-	public  Account getAccount(String id) {
+
+	public Account getAccount(String id) {
 		ArrayList<Account> list = getAccountList();
 		Account a = new Account();
 		for (Account account : list) {
-			if(account.getId().equals(id)) {
-			       a=account;	
+			if (account.getId().equals(id)) {
+				a = account;
 			}
 		}
 		return a;
 	}
-	public Account getAccountbyUserPass(String user, String pass)
-	{
+
+	public Account getAccountbyUserPass(String user, String pass) {
 		String query = "select * from account where username = '" + user + "' and password = '" + pass + "'";
 		try {
 			Connection con = getConnection();
@@ -140,7 +138,6 @@ public class AccountDAO {
 		return null;
 	}
 
-
 	public ArrayList<Integer> getIds() {
 		ArrayList<Integer> p = new ArrayList<Integer>();
 		ArrayList<Account> list = getAccountList();
@@ -151,6 +148,4 @@ public class AccountDAO {
 
 		return p;
 	}
-	}
-
-
+}

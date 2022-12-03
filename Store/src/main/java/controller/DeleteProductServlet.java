@@ -21,19 +21,19 @@ public class DeleteProductServlet extends HttpServlet {
         super();
        
     }
-
+	ProductBO productBO = new ProductBO();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProductBO bo = new ProductBO();
+
 
 		if(request.getParameterMap().containsKey("idel")) {
 		String	id= request.getParameter("idel");
-			bo.Delete(id);
+			productBO.deleteProduct(id);
 		}
 		else{
 			String[] listIdProduct = request.getParameterValues("checkRows");
 
-			bo.Deletes(listIdProduct);
+			productBO.deleteProducts(listIdProduct);
 		}
 		
 		response.sendRedirect("LoadDataProductServlet");   

@@ -17,7 +17,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Favicon-->
-<link rel="shortcut icon" href="template/img/fav.png">
+<link rel="shortcut icon" href="views/web/template/img/fav.png">
 <!-- Author Meta -->
 <meta name="author" content="CodePixar">
 <!-- Meta Description -->
@@ -27,7 +27,7 @@
 <!-- meta character set -->
 <meta charset="UTF-8">
 <!-- Site Title -->
-<title>Karma Shop</title>
+<title>Shoe Store</title>
 
 <!--
             CSS
@@ -61,7 +61,7 @@
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<a class="navbar-brand logo_h" href="#"><img
-						src="views/web/template/img/logo.png" alt=""></a>
+						src="views/web/template/img/fav.png" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse"
 						data-target="#navbarSupportedContent"
 						aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -73,7 +73,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class="nav-item">
 							<% if(session.getAttribute("username") != null){%>
-								<p  style="font-weight: 600;height: 100%;padding-top: 8px; color:#000">Welcome <strong><%=session.getAttribute("username") %></strong></p>
+								<p  style="font-weight: 600;height: 100%;padding-top: 10px; color:#000">Welcome <strong><%=session.getAttribute("username") %></strong></p>
 							<%  } %>
 						</li>
 						<% if( session.getAttribute("isAdmin") != null){%>
@@ -135,8 +135,7 @@
 								ArrayList<Category> CategoryList = (ArrayList<Category>) request.getAttribute("CategoryList");
 								for (int i = 0; i < CategoryList.size(); i++) {
 								%>
-								<li class="filter-list"><input class="pixel-radio"
-									type="radio" id="apple" name="brand"><label for="apple">
+								<li class="filter-list" style="padding-left: 30px;"><label for="apple">
 										<a class=""
 										href="SearchProductServlet?cid=<%=CategoryList.get(i).getId()%>"><%=CategoryList.get(i).getName()%></a>
 								</label></li>
@@ -155,8 +154,7 @@
 
 								for (Integer size : sizes) {
 								%>
-								<li class="filter-list"><input class="pixel-radio"
-									type="radio" id="black" name="color"><label for="black"><a
+								<li class="filter-list " style="padding-left: 30px;"><label for="black"><a
 										class="" href="SearchProductServlet?cid1=<%=size%>"><%=size%></a></label></li>
 								<%
 								}

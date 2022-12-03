@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import model.bean.Product;
-import model.bean.Product;
 
 public class ProductDAO {
 	public Connection getConnection() {
@@ -18,7 +17,7 @@ public class ProductDAO {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ltm", "root", "");
 		} catch (Exception e) {
-			System.err.print("Khong ket noi dc");
+			System.err.print("Can't connect to MySQL");
 		}
 		return con;
 	}
@@ -47,7 +46,7 @@ public class ProductDAO {
 		return result;
 	}
 
-	public void Insert(String id_product, String name, String id_category, int size, int price, String image) {
+	public void insert(String id_product, String name, String id_category, int size, int price, String image) {
 		String query = "Insert into product(id_product,name,id_category,size,price,image) values(?,?,?,?,?,?)";
 		try {
 			Connection con = getConnection();
@@ -65,7 +64,7 @@ public class ProductDAO {
 		}
 	}
 
-	public void Delete(String id_product) {
+	public void deleteProduct(String id_product) {
 		String query = "Delete from product where id_product = '" + id_product + "'";
 		try {
 			Connection con = getConnection();
@@ -77,7 +76,7 @@ public class ProductDAO {
 		}
 	}
 	
-	public void Deletes(String[] id_product) {
+	public void deleteProducts(String[] id_product) {
 		
 		try {
 			Connection con = getConnection();
@@ -93,7 +92,7 @@ public class ProductDAO {
 	}
 	
 
-	public void Update(String id_product, String name, String id_category, int size, int price, String image) {
+	public void update(String id_product, String name, String id_category, int size, int price, String image) {
 		String query = "UPDATE product SET name=?,id_category=?,size=? ,price=?,image=? WHERE id_product ='"
 				+ id_product + "'";
 		try {

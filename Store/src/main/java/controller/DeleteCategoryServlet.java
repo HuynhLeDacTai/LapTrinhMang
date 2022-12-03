@@ -9,32 +9,29 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.bo.CategoryBO;
 
-/**
- * Servlet implementation class DeleteCategoryServlet
- */
 @WebServlet("/DeleteCategoryServlet")
 public class DeleteCategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
-    public DeleteCategoryServlet() {
-        super();
+	public DeleteCategoryServlet() {
 
-    }
-
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CategoryBO bo = new CategoryBO();
-		if(request.getParameterMap().containsKey("idcate")) {
-			String	id= request.getParameter("idcate");
-				bo.Delete(id);
-			}
-		response.sendRedirect("LoadDataProductServlet");   
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	CategoryBO categoryBO = new CategoryBO();
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		if (request.getParameterMap().containsKey("idcate")) {
+			String id = request.getParameter("idcate");
+			categoryBO.delete(id);
+		}
+		response.sendRedirect("LoadDataProductServlet");
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 

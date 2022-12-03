@@ -20,17 +20,16 @@ public class SearchProductServlet extends HttpServlet {
        
 
     public SearchProductServlet() {
-        super();
-  
-    }
 
+    }
+	ProductBO productBO = new ProductBO();
+	CategoryBO categoryBO = new CategoryBO();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProductBO Productbo = new ProductBO();
-		CategoryBO Categorybo = new CategoryBO();
+
 		ArrayList<Product> listP = new ArrayList<Product>();
-		ArrayList<Category> cateList = Categorybo.getCategoryList();
-		ArrayList<Product> ProductList = Productbo.getProductList();
+		ArrayList<Category> cateList = categoryBO.getCategoryList();
+		ArrayList<Product> ProductList = productBO.getProductList();
 		List<Integer> sizes = ProductList.stream()
 										 .map(product -> product.getSize())
 										 .distinct()
@@ -38,16 +37,16 @@ public class SearchProductServlet extends HttpServlet {
 										 .collect(Collectors.toList());
 		if(request.getParameterMap().containsKey("cid")) {
 			String CateId = request.getParameter("cid");
-			listP=Productbo.searchByIdCategory(CateId);
+			listP=productBO.searchByIdCategory(CateId);
 		}
 		else if(request.getParameterMap().containsKey("cid1")) {
 			String Size   =request.getParameter("cid1");
-			listP=Productbo.searchBySize(Integer.parseInt(Size));
+			listP=productBO.searchBySize(Integer.parseInt(Size));
 			
 		}
 		else {
 			String txt =request.getParameter("search_input");
-			listP=Productbo.searchByName(txt);
+			listP=productBO.searchByName(txt);
 		}
 		request.setAttribute("SizeList", sizes);
 		request.setAttribute("CategoryList", cateList);

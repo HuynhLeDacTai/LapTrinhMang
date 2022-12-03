@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,10 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
 
-import model.bo.*;
-import model.bean.*;
+import model.bo.ProductBO;
 
 @WebServlet("/AddProductServlet")
 public class AddProductServlet extends HttpServlet {
@@ -28,8 +25,8 @@ public class AddProductServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProductBO bo = new ProductBO();
-		ArrayList<Integer> Id = bo.getId();
+		ProductBO productBO = new ProductBO();
+		ArrayList<Integer> Id = productBO.getId();
 		List<Integer> listId = Id.stream()
 				 .sorted()
 				 .collect(Collectors.toList());
@@ -39,7 +36,7 @@ public class AddProductServlet extends HttpServlet {
 		String prices=  request.getParameter("prices");
 		String image=  request.getParameter("image");
 		int id = listId.get(listId.size()-1)+1;
-		bo.Insert(String.valueOf(id), name, category, Integer.parseInt(size), Integer.parseInt(prices), image);
+		productBO.insert(String.valueOf(id), name, category, Integer.parseInt(size), Integer.parseInt(prices), image);
 		response.sendRedirect("LoadDataProductServlet");
 
 	}

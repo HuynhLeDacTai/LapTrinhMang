@@ -1,9 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.bean.Account;
 import model.bo.AccountBO;
 
 @WebServlet("/DeleteAccountServlet")
@@ -29,7 +25,7 @@ public class DeleteAccountServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 			if (request.getParameterMap().containsKey("deleteId")) {
-				accountBO.Delete(request.getParameter("deleteId"));
+				accountBO.deleteAccount(request.getParameter("deleteId"));
 			} else {
 				String[] ids = request.getParameterValues("selected");
 				accountBO.deleteAccounts(ids);

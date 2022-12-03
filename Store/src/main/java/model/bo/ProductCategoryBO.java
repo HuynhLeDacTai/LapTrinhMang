@@ -8,7 +8,7 @@ import model.dao.ProductCategoryDAO;
 public class ProductCategoryBO {
 	ProductCategoryDAO dao = new ProductCategoryDAO();
 	public  ArrayList<ProductCategory> getProducCategoryList(){
-		return dao.getProducCategoryList();
+		return dao.getProductCategoryList();
 	}
 	public ProductCategory  productCate(String id) {
 		return dao.productCate(id);

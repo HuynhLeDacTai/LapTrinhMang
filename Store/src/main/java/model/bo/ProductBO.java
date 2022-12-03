@@ -10,14 +10,14 @@ public class ProductBO {
 	public  ArrayList<Product> getProductList(){
 		return  productDAO.getProductList();
 	}
-	public  void Insert(String id_product, String name, String id_category, int size,int price , String image) {
-		productDAO.Insert(id_product, name, id_category, size, price, image);
+	public  void insert(String id_product, String name, String id_category, int size,int price , String image) {
+		productDAO.insert(id_product, name, id_category, size, price, image);
 	}
-	public  void Delete(String id_product) {
-		productDAO.Delete(id_product);
+	public  void deleteProduct(String id_product) {
+		productDAO.deleteProduct(id_product);
 	}
-	public  void Update(String id_product, String name, String id_category, int size,int price , String image) {
-		productDAO.Update(id_product, name, id_category, size, price, image);
+	public  void update(String id_product, String name, String id_category, int size,int price , String image) {
+		productDAO.update(id_product, name, id_category, size, price, image);
 	}
 	public  Product getDetail(String id) {
 		return productDAO.getDetail(id);
@@ -34,7 +34,7 @@ public class ProductBO {
 	public ArrayList<Integer> getId(){
 		return productDAO.getId();
 	}
-	public void Deletes(String[] id_product) {
-		productDAO.Deletes(id_product);
+	public void deleteProducts(String[] id_product) {
+		productDAO.deleteProducts(id_product);
 	}
 }

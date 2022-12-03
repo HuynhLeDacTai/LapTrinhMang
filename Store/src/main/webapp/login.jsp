@@ -17,10 +17,8 @@
     <link rel="stylesheet" href="views/admin/template/css/bootstrap.min.css" />
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="views/admin/template/css/templatemo-style.css">
-    <!--
-	Product Admin CSS Template
-	https://templatemo.com/tm-524-product-admin
-	-->
+    <link rel="shortcut icon" href="views/web/template/img/fav.png">
+
   </head>
 
   <body>

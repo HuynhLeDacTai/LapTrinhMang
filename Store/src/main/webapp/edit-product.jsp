@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="views/admin/template/jquery-ui-datepicker/jquery-ui.min.css" type="text/css" />
     <link rel="stylesheet" href="views/admin/template/css/bootstrap.min.css" />
     <link rel="stylesheet" href="views/admin/template/css/templatemo-style.css">
+    <link rel="shortcut icon" href="views/web/template/img/fav.png">
 
   </head>
 
@@ -52,7 +53,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="LoadDataManagerServlet">
+              <a class="nav-link active" href="LoadDataProductServlet">
                 <i class="fas fa-shopping-cart"></i> Products
               </a>
             </li>

@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="views/admin/template/css/bootstrap.min.css" />
 <link rel="stylesheet"
 	href="views/admin/template/css/templatemo-style.css">
+	<link rel="shortcut icon" href="views/web/template/img/fav.png">
 </head>
 
 <body id="reportsPage">
@@ -108,7 +109,7 @@
 				</div>
 
 				<!-- table container -->
-				<a href="add-account.jsp"
+				<a href="LoadDataAccountServlet?add=1"
 					class="btn btn-primary btn-block text-uppercase mb-3">Add new account</a>
 				<button type="submit" class="btn btn-primary btn-block text-uppercase">
 					Delete selected accounts</button>

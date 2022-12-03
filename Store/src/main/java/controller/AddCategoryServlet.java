@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,12 +19,12 @@ public class AddCategoryServlet extends HttpServlet {
         super();
 
     }
-
+	CategoryBO categoryBO = new CategoryBO();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CategoryBO bo = new CategoryBO();
+
                  String id = request.getParameter("id");
                  String name =request.getParameter("name");
-                 bo.Insert(id, name);
+                 categoryBO.insert(id, name);
                  response.sendRedirect("LoadDataProductServlet");
 
 	}

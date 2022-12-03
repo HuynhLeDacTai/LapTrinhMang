@@ -21,6 +21,7 @@
 <!-- https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="views/admin/template/css/templatemo-style.css">
+	<link rel="shortcut icon" href="views/web/template/img/fav.png">
 </head>
 
 <body>
@@ -84,7 +85,7 @@
 					</div>
 					<div class="row tm-edit-product-row">
 						<div class="col-xl-12 col-lg-12 col-md-12">
-							<form action="LoadDataAccountServlet" class="tm-edit-product-form" method="post">
+							<form action="AddAccountServlet" class="tm-edit-product-form" method="post">
 								<div class="form-group mb-3">
 									<label for="name">Account Name </label> <input id="name"
 										name="name" type="text" class="form-control validate" required />

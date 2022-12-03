@@ -10,17 +10,17 @@ public class AccountBO {
 		return accountDAO.getAccountList();
 	}
 	
-	public void Insert(Account account) {
-		accountDAO.Insert(account.getId(), account.getName(), account.getPhone()
+	public void insert(Account account) {
+		accountDAO.insert(account.getId(), account.getName(), account.getPhone()
 				, account.getMail(), account.getUsername(), account.getPassword(),
 				account.getRole());
 	}
 	
-	public void Delete(String id) {
-		accountDAO.Delete(id);
+	public void deleteAccount(String id) {
+		accountDAO.deleteAccount(id);
 	}
-	public void Update(Account account) {
-		accountDAO.Update(account.getId(), account.getName(), account.getPhone()
+	public void update(Account account) {
+		accountDAO.update(account.getId(), account.getName(), account.getPhone()
 				, account.getMail(), account.getUsername(), account.getPassword(),
 				account.getRole());
 	}

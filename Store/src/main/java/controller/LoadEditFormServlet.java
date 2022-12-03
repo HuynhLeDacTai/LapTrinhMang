@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 import model.bean.Category;
 import model.bean.ProductCategory;
 import model.bo.CategoryBO;
-import model.bo.ProductBO;
 import model.bo.ProductCategoryBO;
 
 
@@ -24,10 +23,9 @@ public class LoadEditFormServlet extends HttpServlet {
        
    
     public LoadEditFormServlet() {
-        super();
-      
-    }
 
+    }
+	  CategoryBO categoryBO = new CategoryBO();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
@@ -38,8 +36,7 @@ public class LoadEditFormServlet extends HttpServlet {
 			if(session.getAttribute("isAdmin") != null)
 			{
 		 ProductCategoryBO procate = new ProductCategoryBO();
-		  CategoryBO bo = new CategoryBO();
-	      ArrayList<Category> listCategory = bo.getCategoryList();
+	      ArrayList<Category> listCategory = categoryBO.getCategoryList();
 		 ProductCategory p = new ProductCategory();
 		if(request.getParameterMap().containsKey("cid")) {
 			String id= request.getParameter("cid");

@@ -22,6 +22,7 @@
 <!-- https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="views/admin/template/css/templatemo-style.css">
+	<link rel="shortcut icon" href="views/web/template/img/fav.png">
 </head>
 
 <body>

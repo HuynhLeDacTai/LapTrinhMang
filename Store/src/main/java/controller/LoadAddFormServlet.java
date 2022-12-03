@@ -18,11 +18,10 @@ public class LoadAddFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
     public LoadAddFormServlet() {
-        super();
-        
+
     }
 
-	
+    CategoryBO categoryBO = new CategoryBO();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("username") == null){
@@ -32,8 +31,8 @@ public class LoadAddFormServlet extends HttpServlet {
 		{
 			if(session.getAttribute("isAdmin") != null)
 			{
-		      CategoryBO bo = new CategoryBO();
-		      ArrayList<Category> listCategory = bo.getCategoryList();
+
+		      ArrayList<Category> listCategory = categoryBO.getCategoryList();
 		      request.setAttribute("listCategory", listCategory);
 		      String destination = "/add-product.jsp";
 	  		RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);

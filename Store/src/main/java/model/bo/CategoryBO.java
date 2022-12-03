@@ -4,21 +4,27 @@ import java.util.ArrayList;
 
 import model.bean.Category;
 import model.dao.CategoryDAO;
+
 public class CategoryBO {
 	CategoryDAO bo = new CategoryDAO();
-	public  ArrayList<Category> getCategoryList(){
-		 return bo.getCategoryList();
+
+	public ArrayList<Category> getCategoryList() {
+		return bo.getCategoryList();
 	}
-	public  void Insert(String id, String name) {
-		bo.Insert(id, name);
+
+	public void insert(String id, String name) {
+		bo.insert(id, name);
 	}
-	public  void Delete(String id) {
-		bo.Delete(id);
+
+	public void delete(String id) {
+		bo.delete(id);
 	}
-	public  void Update(String id, String name) {
-		bo.Update(id, name);
+
+	public void update(String id, String name) {
+		bo.update(id, name);
 	}
-	public ArrayList<Integer> getID(){
+
+	public ArrayList<Integer> getID() {
 		return bo.getID();
 	}
 }

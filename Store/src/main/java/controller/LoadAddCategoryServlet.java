@@ -12,20 +12,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.bean.*;
-
-import model.bo.*;
+import model.bo.CategoryBO;
 @WebServlet("/LoadAddCategoryServlet")
 public class LoadAddCategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
     public LoadAddCategoryServlet() {
-        super();
 
     }
 
-
+    CategoryBO categoryBO = new CategoryBO();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("username") == null){
@@ -34,8 +31,8 @@ public class LoadAddCategoryServlet extends HttpServlet {
 		else {
 			if(session.getAttribute("isAdmin") != null)
 			{
-                       CategoryBO bo = new CategoryBO();
-                       List<Integer> listId = bo.getID().stream()
+
+                       List<Integer> listId = categoryBO.getID().stream()
               				 .sorted()
               				 .collect(Collectors.toList());
                        request.setAttribute("id", "H"+(listId.get(listId.size()-1)+1));
