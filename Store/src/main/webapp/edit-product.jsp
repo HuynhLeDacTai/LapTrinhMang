@@ -52,7 +52,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="LoadDataManagerServlet">
+              <a class="nav-link active" href="LoadDataManagerServlet">
                 <i class="fas fa-shopping-cart"></i> Products
               </a>
             </li>

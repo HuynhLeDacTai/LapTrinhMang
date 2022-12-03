@@ -49,7 +49,6 @@
 <link rel="stylesheet" href="views/web/template/css/main.css"
 	type="text/css">
 
-
 </head>
 
 <body id="category">
@@ -74,22 +73,23 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class="nav-item">
 							<% if(session.getAttribute("username") != null){%>
-								<p >Welcome <strong><%=session.getAttribute("username") %></strong></p>
+								<p  style="font-weight: 600;height: 100%;padding-top: 8px; color:#000">Welcome <strong><%=session.getAttribute("username") %></strong></p>
 							<%  } %>
 						</li>
 						<% if( session.getAttribute("isAdmin") != null){%>
 							<li class="nav-item">
-							<a class="nav-link d-block"
+							<a style="font-weight: 600" class="nav-link d-block"
 							href="LoadDataManagerServlet"> Manage
 							</a></li>
 						<%  } %>
 							
-						<li class="nav-item"><a class="nav-link d-block"
+						<li class="nav-item"><a style="font-weight: 600" class="nav-link d-block"
 							href="LoginServlet?action=logout"> Logout
 							</a></li>
 						<li class="nav-item">
 							<button class="search">
-								<span class="lnr lnr-magnifier" id="search"></span>
+							<span style="font-weight:600; font-size: 20px " class="lnr lnr-magnifier" id="search"></span> 
+
 							</button>
 						</li>
 					</ul>

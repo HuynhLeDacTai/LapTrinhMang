@@ -49,7 +49,7 @@
 						class="nav-link dropdown-toggle" href="LoadDataWebShopServlet">
 							<i class="fas fa-store"></i> <span> Shop</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link "
+					<li class="nav-item"><a class="nav-link active "
 						href="LoadDataManagerServlet"> <i class="fas fa-shopping-cart"></i>
 							Products
 					</a></li>

@@ -52,11 +52,25 @@
 						href="LoadDataAccountServlet"> <i class="far fa-user"></i> Accounts
 					</a></li>
 				</ul>
+				<% if(session.getAttribute("username") != null){%>
 				<ul class="navbar-nav">
+					<li class="nav-item">
+						<p class="nav-link d-block">Account : <strong><%=session.getAttribute("username") %></strong></p>
+					</li>
 					<li class="nav-item"><a class="nav-link d-block"
-						href="login.jsp"> Admin, <b>Logout</b>
+						href="LoginServlet?action=logout"> 
+						<b>Logout</b>
 					</a></li>
 				</ul>
+				<%  } %>
+				<% if(session.getAttribute("username") == null){%>
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link d-block"
+						href="LoginServlet"> 
+						<b>Login</b>
+					</a></li>
+				</ul>
+				<%  } %>
 			</div>
 		</div>
 	</nav>

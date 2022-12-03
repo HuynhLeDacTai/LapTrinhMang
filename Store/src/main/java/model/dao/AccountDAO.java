@@ -49,7 +49,7 @@ public class AccountDAO {
 
 	public  void Insert(String id, String name, String phone, String mail, String username, String password,
 			int role) {
-		String query = "Insert into account(id,name,phone,mail,username,password,role,image) values(?,?,?,?,?,?,?)";
+		String query = "Insert into account(id,name,phone,mail,username,password,role) values(?,?,?,?,?,?,?)";
 		try {
 			Connection con = getConnection();
 			PreparedStatement p = con.prepareStatement(query);
