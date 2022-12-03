@@ -43,7 +43,7 @@
 						</a></li>
 
 						<li class="nav-item"><a class="nav-link active"
-							href="accounts.jsp"> <i class="far fa-user"></i> Accounts
+							href="LoadDataAccountServlet"> <i class="far fa-user"></i> Accounts
 						</a></li>
 					</ul>
 					<% if(session.getAttribute("username") != null){%>

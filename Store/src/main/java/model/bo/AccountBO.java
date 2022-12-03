@@ -36,8 +36,8 @@ public class AccountBO {
 		return accountDAO.getIds();
 	}
 	
-	public  Account login(String user, String pass) {
-		return accountDAO.login(user, pass);
+	public  Account getAccountbyUserPass(String user, String pass) {
+		return accountDAO.getAccountbyUserPass(user, pass);
 	}
 
 }

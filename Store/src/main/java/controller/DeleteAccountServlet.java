@@ -32,9 +32,6 @@ public class DeleteAccountServlet extends HttpServlet {
 				accountBO.Delete(request.getParameter("deleteId"));
 			} else {
 				String[] ids = request.getParameterValues("selected");
-				for (String id : ids) {
-					System.out.println(id);
-				}
 				accountBO.deleteAccounts(ids);
 			}
 			response.sendRedirect("LoadDataAccountServlet");

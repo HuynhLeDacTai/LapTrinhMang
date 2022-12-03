@@ -55,8 +55,8 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password").trim();
 		
 		String destination = null;
-		AccountBO bo = new AccountBO();
-		Account check = bo.login(username, password);
+		AccountBO accountBO = new AccountBO();
+		Account check = accountBO.getAccountbyUserPass(username, password);
 		if(check == null)
 		{
 			destination = "/login.jsp";

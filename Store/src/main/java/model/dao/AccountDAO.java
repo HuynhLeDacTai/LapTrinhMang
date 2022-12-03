@@ -123,7 +123,7 @@ public class AccountDAO {
 		}
 		return a;
 	}
-	public Account login(String user, String pass)
+	public Account getAccountbyUserPass(String user, String pass)
 	{
 		String query = "select * from account where username = '" + user + "' and password = '" + pass + "'";
 		try {
