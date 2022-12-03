@@ -37,7 +37,7 @@ public class UpdateProductServlet extends HttpServlet {
 		String image=  request.getParameter("image");
 		String id = request.getParameter("cid");
          bo.Update(id, name, category, Integer.parseInt(size), Integer.parseInt(prices), image);
-		response.sendRedirect("LoadDataManagerServlet");     
+		response.sendRedirect("LoadDataProductServlet");     
 	}
 
 	

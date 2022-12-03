@@ -40,7 +40,7 @@ public class AddProductServlet extends HttpServlet {
 		String image=  request.getParameter("image");
 		int id = listId.get(listId.size()-1)+1;
 		bo.Insert(String.valueOf(id), name, category, Integer.parseInt(size), Integer.parseInt(prices), image);
-		response.sendRedirect("LoadDataManagerServlet");
+		response.sendRedirect("LoadDataProductServlet");
 
 	}
 

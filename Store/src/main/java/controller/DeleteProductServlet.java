@@ -36,7 +36,7 @@ public class DeleteProductServlet extends HttpServlet {
 			bo.Deletes(listIdProduct);
 		}
 		
-		response.sendRedirect("LoadDataManagerServlet");   
+		response.sendRedirect("LoadDataProductServlet");   
 	}
 
 	

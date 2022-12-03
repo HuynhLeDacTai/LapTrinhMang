@@ -80,7 +80,7 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("isAdmin", check.getRole());
 //				destination = "/LoadDataManagerServlet";
 //				request.getRequestDispatcher(destination).forward(request, response);
-				response.sendRedirect("LoadDataManagerServlet");
+				response.sendRedirect("LoadDataProductServlet");
 			}
 		}
 
