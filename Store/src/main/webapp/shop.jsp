@@ -79,7 +79,7 @@
 						<% if( session.getAttribute("isAdmin") != null){%>
 							<li class="nav-item">
 							<a style="font-weight: 600" class="nav-link d-block"
-							href="LoadDataManagerServlet"> Manage
+							href="LoadDataProductServlet"> Manage
 							</a></li>
 						<%  } %>
 							

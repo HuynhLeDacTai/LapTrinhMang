@@ -14,12 +14,12 @@ import javax.servlet.http.HttpSession;
 import model.bean.*;
 
 import model.bo.*;
-@WebServlet("/LoadDataManagerServlet")
-public class LoadDataManagerServlet extends HttpServlet {
+@WebServlet("/LoadDataProductServlet")
+public class LoadDataProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-    public LoadDataManagerServlet() {
+    public LoadDataProductServlet() {
         super();
        
     }

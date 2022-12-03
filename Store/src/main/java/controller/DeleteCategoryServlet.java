@@ -29,7 +29,7 @@ public class DeleteCategoryServlet extends HttpServlet {
 			String	id= request.getParameter("idcate");
 				bo.Delete(id);
 			}
-		response.sendRedirect("LoadDataManagerServlet");   
+		response.sendRedirect("LoadDataProductServlet");   
 	}
 
 	

@@ -24,7 +24,7 @@ public class AddCategoryServlet extends HttpServlet {
                  String id = request.getParameter("id");
                  String name =request.getParameter("name");
                  bo.Insert(id, name);
-                 response.sendRedirect("LoadDataManagerServlet");
+                 response.sendRedirect("LoadDataProductServlet");
 
 	}
 
