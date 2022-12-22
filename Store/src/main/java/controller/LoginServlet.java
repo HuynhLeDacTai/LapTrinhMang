@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,16 +27,25 @@ public class LoginServlet extends HttpServlet {
 		String destination = null;
 		HttpSession session = request.getSession();
 		String action = request.getParameter("action");
-		if (action == null) {
-			destination = "/login.jsp";
+		if(session.getAttribute("logfail") != null)
+		{
+			session.removeAttribute("logfail");
+			destination = "/login.jsp?error=0";
 			request.getRequestDispatcher(destination).forward(request, response);
-		} else {
-			if (action.equalsIgnoreCase("logout")) {
-				session.removeAttribute("username");
-				if (session.getAttribute("isAdmin") != null) {
-					session.removeAttribute("isAdmin");
+		}
+		else
+		{
+			if (action == null) {
+				destination = "/login.jsp";
+				request.getRequestDispatcher(destination).forward(request, response);
+			} else {
+				if (action.equalsIgnoreCase("logout")) {
+					session.removeAttribute("username");
+					if (session.getAttribute("isAdmin") != null) {
+						session.removeAttribute("isAdmin");
+					}
+					response.sendRedirect("LoginServlet");
 				}
-				response.sendRedirect("LoginServlet");
 			}
 		}
 	}
@@ -46,23 +56,34 @@ public class LoginServlet extends HttpServlet {
 		AccountBO accountBO = new AccountBO();
 		String username = request.getParameter("username").trim();
 		String password = request.getParameter("password").trim();
-
+		String logfail = request.getParameter("logfail");
 		String destination = null;
 
 		Account check = accountBO.getAccountbyUserPass(username, password);
 		if (check == null) {
-			destination = "/login.jsp";
-			response.sendRedirect(request.getContextPath() + destination + "?error=0");
+			session.setAttribute("logfail", "0");
+			doGet(request,response);
 		} else {
 			session.setAttribute("username", username);
-
+			if(logfail != null)
+			{
+				session.removeAttribute("logfail");
+			}
 			if (check.getRole() == 0) {
 				// user
-				response.sendRedirect("LoadDataWebShopServlet");
+				//response.sendRedirect("LoadDataWebShopServlet");
+				
+				String Destination = "/LoadDataWebShopServlet";
+				RequestDispatcher rd = getServletContext().getRequestDispatcher(Destination);
+				rd.forward(request, response);
 			} else {
 				// admin
 				session.setAttribute("isAdmin", check.getRole());
-				response.sendRedirect("LoadDataProductServlet");
+				//response.sendRedirect("LoadDataProductServlet");
+				
+				String Destination = "/LoadDataProductServlet";
+				RequestDispatcher rd = getServletContext().getRequestDispatcher(Destination);
+				rd.forward(request, response);
 			}
 		}
 
