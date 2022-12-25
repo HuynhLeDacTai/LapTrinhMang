@@ -5,4 +5,8 @@
     
     <welcome-file>LoginServlet</welcome-file>
   </welcome-file-list>
+  
+  	<session-config>
+		<session-timeout>2</session-timeout>
+	</session-config>
 </web-app>
